@@ -4,7 +4,9 @@ const { Server } = require("socket.io");
 const bodyParser = require("body-parser");
 const server = createServer(app);
 const io = new Server(server, {
-  cors: true
+  cors: {
+    origin : "https://chat-room-using-websockets-client.vercel.app"
+  }
 });
 app.use(bodyParser.json());
 
